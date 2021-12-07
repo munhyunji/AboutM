@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MovieRankMapper">
+
+    <insert id="insertItem" 
+        parameterType="study.spring.springhelper.model.SearchDailyBoxOfficeList$BoxOfficeResult$DailyBoxOfficeList">
+        INSERT INTO movie (
+            target_dt, movieno, movietitle, content, director, actor, poster, runningtime,
+            opendate, genre, country, homelygrade, navergrade,  age, trailer
+        ) VALUES (
+            #{targetDt}, #{movieCd}, #{movieNm}, #{movieNm}, #{movieNm}, #{movieNm}, #{movieNm}, null,
+            #{openDt}, #{movieNm}, null,  null, null, #{movieNm}, null
+        );
+    </insert>
+    <update id="updateItem" 
+        parameterType="study.spring.springhelper.model.SearchDailyBoxOfficeList$BoxOfficeResult$DailyBoxOfficeList">
+        UPDATE movie SET
+            target_dt        = #{targetDt},        
+            movieno       = #{movieCd}, 
+            movietitle = #{movieNm}, 
+            content         = #{movieNm}, 
+            director         = #{movieNm}, 
+            actor          = #{movieNm},
+            poster        = #{movieNm}, 
+            runningtime      = null, 
+            opendate      = #{openDt}, 
+            genre     = #{movieNm}, 
+            country        = null, 
+            homelygrade       = null, 
+            navergrade         = null,         
+            age  = #{movieNm},
+            trailer      = null
+                      
+        WHERE target_dt=#{targetDt} AND movietitle=#{movieNm};
+    </update>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

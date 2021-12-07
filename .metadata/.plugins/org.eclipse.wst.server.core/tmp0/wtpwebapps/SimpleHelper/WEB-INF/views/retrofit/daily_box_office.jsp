@@ -1,0 +1,107 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Hello JSP</title>
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" />
+</head>
+<body>
+	<h1>${date}박스오피스</h1>
+
+	<!-- 검색폼 -->
+	<form name="form1" method="get"
+		action="${pageContext.request.contextPath}/retrofit/daily_box_office.do">
+		<label for="targetDt">검색일: </label> <input type="date" id="date"
+			name="date" value="${date}" /> <input type="submit" value="검색" />
+	</form>
+
+	<hr />
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>순위</th>
+				<th>제목</th>
+				<th>개봉일</th>
+				<th>누적매출액</th>
+				<th>오늘관객수</th>
+				<th>누적관객수</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:choose>
+				<c:when test="${list !=null && list.size() > 0 }">
+					<c:forEach var="item" items="${list}" varStatus="status">
+						<tr>
+							<td>${item.rank}</td>
+							<td>${item.movieNm}</td>
+							<td>${item.openDt}</td>
+							<td><fmt:formatNumber value="${item.salesAcc}"
+									pattern="#,###" />원</td>
+							<td><fmt:formatNumber value="${item.audiCnt}"
+									pattern="#,###" />명</td>
+							<td><fmt:formatNumber value="${item.audiAcc}"
+									pattern="#,###" />명</td>
+						</tr>
+					</c:forEach>
+
+				</c:when>
+
+				<c:otherwise>
+					<tr>
+						<td colspan="6" align="center">조회내역이 없습니다.</td>
+					</tr>
+				</c:otherwise>
+			</c:choose>
+		</tbody>
+	</table>
+
+
+	<div style="width: 1028px; height: 740px">
+		<canvas id="myChart"></canvas>
+	</div>
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js">
+	
+	</script>
+	
+	<script>
+	var ctx =document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(ctx,{
+		type:'bar',
+		data:{
+			labels:[${movieNmStr}],
+			datasets:[{
+				label:'${date} 박스오피스',
+				data:[${audiCntStr}],
+				backgroundColor:'rgba(255,99,132,0.2)',
+				borderColor:'rgba(255,99,132,1)',
+				borderWidth:1
+			}]
+		},
+		options:{
+			scales:{
+				yAxes:[{
+					ticks:{
+						beginAtZero:true
+					}
+				}]
+			}
+		}
+	});
+	</script>
+
+
+
+
+</body>
+</html>
+
+
