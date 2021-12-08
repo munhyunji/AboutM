@@ -13,37 +13,11 @@
 	href="${pageContext.request.contextPath}/assets/css/nanumfont.css" />
 	<link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/assets/css/main.css" />
+	<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/assets/css/navbar.css" />
 </head>
 <body>
-	<div class="navbar navbar-fixed-top" role="navigation">
-        <!-- 로고영역-->
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">메뉴열기</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!--// 반응형메뉴버튼 -->
-                <!-- 로고-->
-                <a class="navbar-brand" href="#">About M.</a>
-                <!--//로고-->
-            </div>
-            <!--// 로고영역 -->
-            <!-- 메뉴 영역-->
-            <div class="navbar-collapse collapse">
-                <!-- 메뉴항목 -->
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#page_2">자신소개</a></li>
-                     <li><a href="#page_5">Diary</a></li>
-                     <li><a href="#">마치며..</a></li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
+	<%@ include file="../include/navbar.jsp"%>
     <div class="container">
         <div class="page_1" id="page_1">
         <div class="main_introduce">
@@ -94,10 +68,7 @@
             <img src="assets/img/mind.jpg" class="main_img img-rounded">
             <h4 style="margin-left: 150px;">혹시 "---" 아세요?</h4>
             <p class="main_sub">
-               
-                카페도 있어요 제가 취미로 자주한답니다
-                이런 경험있는 지원자 보신적있나요?
-
+              
             </p>
 
         </div>

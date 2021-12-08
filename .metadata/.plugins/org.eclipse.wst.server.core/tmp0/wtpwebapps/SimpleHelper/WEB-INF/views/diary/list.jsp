@@ -11,6 +11,7 @@
 </head>
 <body>
     <h1>교수관리</h1>
+    
     <a href="${pageContext.request.contextPath}/diary/add.do">[일기적기추가]</a>
 
     <!-- 검색폼 -->
