@@ -21,6 +21,7 @@
 <body>
 <div class="container">
     <h1>다이어리 추가</h1>
+    <hr/>
     <form method="post" action="${pageContext.request.contextPath }/diary/add_ok.do">
      	<div>
      	

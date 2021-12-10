@@ -86,16 +86,6 @@
         </p>
     </div>
     </div>
-	<ul>
-		
-		
-		<li><a href="${pageContext.request.contextPath }/diary/list.do">
-				다이어리에게</a>
-				
-		</li>
-		
-		
-	</ul>
 
 
 	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
