@@ -76,6 +76,13 @@ public class DiaryController {
 			@RequestParam(value="content", defaultValue="") String content
 			) {
 		
+		 /** 1) 사용자가 입력한 파라미터 유효성 검사 */
+        // 일반 문자열 입력 컬럼 --> String으로 파라미터가 선언되어 있는 경우는 값이 입력되지 않으면 빈 문자열로 처리된다.
+        if (!regexHelper.isValue(title))     { return webHelper.redirect(null, "글 제목을 입력하세요."); }
+        if (!regexHelper.isValue(date))   { return webHelper.redirect(null, "글 작성 일자를를 입력하세요."); }
+        if (!regexHelper.isValue(content))     { return webHelper.redirect(null, "글 내용을 입력하세요."); }
+      
+		
 		Diary input = new Diary();
 		input.setTitle(title);
 		input.setDate(date);

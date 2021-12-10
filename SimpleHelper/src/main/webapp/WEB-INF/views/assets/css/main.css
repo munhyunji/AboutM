@@ -27,9 +27,26 @@ padding : 100px 0 100px 0;
 
 .container .page_1 {
 background-color: #e7e7df;
-background-image : url(assets/img/pattern.png);
+background-image : url(../assets/img/pattern.png);
 background-repeat: repeat;
 }
+
+.container .page_2 {
+	height: 600px;
+	
+}
+
+
+.container .page_3 {
+	height: 600px;
+	background-color: #efe8d4;
+background-size: 40% 70%;
+background-image : url(../img/beans4.png);
+background-repeat: no-repeat;
+}
+
+
+/* 페이지1 css */
 
 .main_introduce .main_img{
 float : left;
@@ -44,10 +61,10 @@ float : left;
 }
 
 .main_introduce .main_beans2{
-width: 260px;
-height: 260px;
+width: 200px;
+height: 200px;
 margin-left: -250px;
-margin-bottom: -700px;
+margin-bottom: -1440px;
 
 }
 

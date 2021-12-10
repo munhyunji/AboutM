@@ -9,9 +9,17 @@
 <head>
     <meta charset="UTF-8" />
     <title>Hello JSP</title>
+     <link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/assets/css/nanumfont.css" />
+	<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/assets/css/navbar.css" />
+	
 </head>
 
 <body>
+<div class="container">
     <h1>다이어리 추가</h1>
     <form method="post" action="${pageContext.request.contextPath }/diary/add_ok.do">
      	<div>
@@ -22,18 +30,14 @@
      		<label for="title">제목</label>
      		<input type="text" name="title" id="title"     />
      		
-     		
-     		
-     		
-     		<label for="writer">글작성자</label>
-     		<input type="text" name="writer" id="writer"     />
+     		<p>작성자 : 문현지</p>
      		
      		<label for="content">내용</label>
      		<input type="text" name="content" id="content"/>
      			</div>
      		<button type="submit">저장하기</button>
     </form>
-    
+    </div>
 </body>
 
 </html>

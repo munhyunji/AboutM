@@ -24,13 +24,13 @@
              <img src="${pageContext.request.contextPath}/assets/img/beans.png" class="main_beans">
             <img src="${pageContext.request.contextPath}/assets/img/jack.png" class="main_img">
 
-            <img src="${pageContext.request.contextPath}/assets/img/beans2.png" class="main_beans2">
+            
 
             <h2>All about her.</h2>
             <p class="main_sub">
                 기존의 웹 표준 기술 위에 새로워진 HTML5와 CSS3 요소를 더하여 인터렉티브 한 반응형 웹페이지 기술을 제작할 수 있는 웹 퍼블리싱 기법들을 소개하고, CSS3의 코드를 편리하게 작성할 수 있도록 도와주는 LESS를 기반으로 한
             </p>
-
+			<img src="${pageContext.request.contextPath}/assets/img/beans2.png" class="main_beans2">
         </div>
 
     </div>
@@ -74,7 +74,7 @@
         </div>
     </div>
     <div class="page_4" id="page_4">
-      <h4 align="center">개발자 전에는 이런일을 했습니다.</h4>
+      <h4 align="center">무슨내용을 넣을까.</h4>
         <p>
           
         </p>
@@ -97,6 +97,12 @@
 		
 	</ul>
 
+
+	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/handlebars-v4.0.11.js"></script>
+	
+	
 
 </body>
 </html>

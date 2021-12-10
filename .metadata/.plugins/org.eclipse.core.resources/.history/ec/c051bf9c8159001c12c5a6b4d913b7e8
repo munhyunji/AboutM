@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/* 모든 태그에 적용될 공통 속성
+ * -------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    color: #222;
+    font-size: 12px;
+}
+
+/* 모든 링크의 밑줄 제거
+ * -------------------------------------- */
+a {
+    text-decoration: none;
+}
+
+/* 모든 목록정의 초기화. - 여백은 6,7라인에서 제거했으므로 생략
+ * -------------------------------------- */
+ul, ol {
+    list-style: none;
+}
+
+.page_1, .page_2, .page_3, .page_4, .page_5{
+padding : 100px 0 100px 0;
+}
+
+.container .page_1 {
+background-color: #e7e7df;
+background-image : url(../assets/img/pattern.png);
+background-repeat: repeat;
+}
+
+.container .page_2 {
+	height: 600px;
+	
+}
+
+
+.container .page_3 {
+	height: 600px;
+	background-color: #efe8d4;
+background-size: 40% 40%;
+background-image : url(../img/beans4.png);
+background-repeat: no-repeat;
+}
+
+
+/* 페이지1 css */
+
+.main_introduce .main_img{
+float : left;
+margin: 0 150px 0 -220px;
+}
+
+.main_introduce .main_beans{
+width: 360px;
+height: 360px;
+margin-left: 50px;
+float : left;
+}
+
+.main_introduce .main_beans2{
+width: 260px;
+height: 260px;
+margin-left: -250px;
+margin-bottom: -900px;
+
+}
+
+.main_sub {
+margin-left: 150px;
+}
+
+.page3_introduce img{
+float : right;
+margin: 0 150px 0 100px;
+}
+
