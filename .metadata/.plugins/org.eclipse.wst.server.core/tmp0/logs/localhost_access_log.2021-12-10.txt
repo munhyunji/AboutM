@@ -702,3 +702,12 @@
 0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:46:31 +0900] "GET /springhelper/views/end.do HTTP/1.1" 404 721
 0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:46:50 +0900] "GET /springhelper/views/end.do HTTP/1.1" 404 721
 0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:46:53 +0900] "GET /springhelper/views/end.do HTTP/1.1" 404 721
+127.0.0.1 - - [10/Dec/2021:16:47:21 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:47:25 +0900] "GET /springhelper/ HTTP/1.1" 200 4570
+0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:47:25 +0900] "GET /springhelper/assets/css/navbar.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:47:25 +0900] "GET /springhelper/assets/assets/img/pattern.png HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:47:26 +0900] "GET /springhelper/end.do HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:47:52 +0900] "GET /springhelper/ HTTP/1.1" 200 4565
+0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:47:52 +0900] "GET /springhelper/assets/assets/img/pattern.png HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:47:55 +0900] "GET /springhelper/diary/list.do HTTP/1.1" 200 10286
+0:0:0:0:0:0:0:1 - - [10/Dec/2021:16:47:59 +0900] "GET /springhelper/diary/list.do HTTP/1.1" 200 10286

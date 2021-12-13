@@ -21,6 +21,12 @@
    resultMap="diarymap">
    SELECT id, title, DATE_FORMAT(date, '%Y-%m-%d') AS date, writer, content
    FROM diary
+   
+   ORDER BY id DESC
+   
+   <if test="listCount > 0">
+	LIMIT #{offset}, #{listCount}   
+   </if>
    </select>
    
    <!--  데이터 저장하기 -->
@@ -33,6 +39,14 @@
    	#{id}, #{title}, #{date}, #{writer}, #{content}
    ) 
   </insert>
+  
+   <!-- 데이터 수 조회 위한 기능 정의 -->
+    <select id="selectCountAll"
+    parameterType="study.spring.springhelper.model.Diary" resultType="int">
+    SELECT COUNT(*)
+    FROM diary 
+   
+    </select>
 
 </mapper>
 

@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 @Data
 @Slf4j
 public class PageData {
-    /***** GET파라미터로 처리할 값 *****/
+	 /***** GET파라미터로 처리할 값 *****/
     private int nowPage = 1; // 현재 페이지 번호
 
     /***** DB에서 조회한 결과 값 *****/
@@ -76,5 +76,6 @@ public class PageData {
 
         // 계산 결과를 로그로 기록한다.
         log.debug(this.toString());
-    }
+	}
+	
 }

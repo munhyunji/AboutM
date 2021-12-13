@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import clojure.lang.Keyword;
+import study.spring.springhelper.helper.PageData;
 import study.spring.springhelper.helper.RegexHelper;
 import study.spring.springhelper.helper.WebHelper;
 import study.spring.springhelper.model.Diary;
@@ -34,14 +34,33 @@ public class DiaryController {
 	//목록 페이지
 	@RequestMapping(value = "/diary/list.do", method = RequestMethod.GET)
 	public ModelAndView list(Model model,
-			@RequestParam(value="keyword", required=false) String keyword) {
-	
+			@RequestParam(value="keyword", required=false) String keyword,
+			
+			//페이지구현에서 사용할 현재 페이지 번호
+			@RequestParam(value="page", defaultValue="1") int nowPage ) {
+		
+		/*페이징 작업*/
+		
+		int totalCount = 0; //전체 게시글수
+		int listCount = 5; // 한페이지당 표시할 목록수
+		int pageCount = 5; // 한 그룹당 표시할 페이지 번호수 
+		
 		Diary input = new Diary();
 		input.setTitle(keyword);
 		
 		List<Diary> output = null; // 조회결과가 저장될 객체;
+		PageData pageData = null;
 		
 		try {
+			
+			// 전체게시글수 조회
+			totalCount = diaryService.getDiaryCount(input);
+			//페이지번호계산
+			pageData = new PageData(nowPage, totalCount, listCount, pageCount);
+			
+			Diary.setOffset(pageData.getOffset());
+			Diary.setListCount(pageData.getListCount());
+			
 			output = diaryService.getDiaryList(input);
 			
 		} catch (Exception e) {
@@ -51,7 +70,7 @@ public class DiaryController {
 		//view처리
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("output", output);
-		
+		model.addAttribute("pageData", pageData);
 		
 		
 		
@@ -84,6 +103,8 @@ public class DiaryController {
       
 		
 		Diary input = new Diary();
+		
+		
 		input.setTitle(title);
 		input.setDate(date);
 		input.setWriter(writer);
