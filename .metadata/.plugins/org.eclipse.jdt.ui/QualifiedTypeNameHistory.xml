@@ -27,4 +27,5 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="clojure.lang.Keyword"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="study.spring.springhelper.helper.PageData"/>
 </qualifiedTypeNameHistroy>
