@@ -25,7 +25,7 @@
     <div class="container">
     <div class="diary_page">
      <h1>Dear diary</h1>
-    <a href="${pageContext.request.contextPath}/diary/add.do">[일기적기추가]</a>
+   <a class="btn btn-primary" href="${pageContext.request.contextPath}/diary/add.do">일기적기추가</a>
 
    
 
@@ -59,8 +59,6 @@
                 <c:otherwise>
                     <%-- 조회 결과에 따른 반복 처리 --%>
                     <c:forEach var="item" items="${output}" varStatus="status">
-                        <%-- 출력을 위해 준비한 교수이름 변수 --%>
-                        <c:set var="title" value="${item.title}" />
                         
                         <%-- 상세페이지로 이동하기 위한 URL --%>
                         <c:url value="/diary/view.do" var="viewUrl">
@@ -69,7 +67,7 @@
                         
                         <tr>
                             <td align="center">${item.id}</td>
-                            <td align="center">${item.title}</td>
+                            <td align="center"><a href="${viewUrl}">${item.title }</a></td>
                             <td align="center">${item.date}</td>
                             <td align="center">${item.writer}</td>
                             <td align="center">${item.content}</td>

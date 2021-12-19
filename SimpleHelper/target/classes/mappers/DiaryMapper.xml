@@ -14,6 +14,14 @@
    </resultMap>
    
    <!-- 단일행 조회 -->
+   <select id="selectOne"
+   parameterType="study.spring.springhelper.model.Diary"
+   resultMap="diarymap">
+   SELECT * FROM diary WHERE id=#{id}
+   
+   
+   </select>
+   
    
    <!-- 다중행 조회 -->
    <select id="selectList"

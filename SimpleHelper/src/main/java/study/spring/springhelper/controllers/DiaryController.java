@@ -1,6 +1,10 @@
 package study.spring.springhelper.controllers;
 
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -77,6 +81,34 @@ public class DiaryController {
 		
 		return new ModelAndView("diary/list");
 	}
+	
+	//상세페이지
+	@RequestMapping(value = "/diary/view.do", method = RequestMethod.GET)
+	public String view(Model model, HttpServletResponse response,
+			@RequestParam(value="id", required=false) int id ) {
+		
+	
+		Diary input = new Diary();
+		input.setId(id);
+		
+		Diary output = null; // 조회결과가 저장될 객체;
+		
+		
+		try {
+			
+			// 객체조회해서 output에 담음
+			output = diaryService.getDiaryItem(input);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		//view처리
+		
+		model.addAttribute("output", output);
+			
+		return ("diary/view");
+	}
 
 	// 작성폼페이지
 	@RequestMapping(value = "/diary/add.do", method = RequestMethod.GET)
@@ -98,13 +130,12 @@ public class DiaryController {
 		 /** 1) 사용자가 입력한 파라미터 유효성 검사 */
         // 일반 문자열 입력 컬럼 --> String으로 파라미터가 선언되어 있는 경우는 값이 입력되지 않으면 빈 문자열로 처리된다.
         if (!regexHelper.isValue(title))     { return webHelper.redirect(null, "글 제목을 입력하세요."); }
-        if (!regexHelper.isValue(date))   { return webHelper.redirect(null, "글 작성 일자를를 입력하세요."); }
+        if (!regexHelper.isValue(date))     { return webHelper.redirect(null, "글 작성일이 없습니다."); }
         if (!regexHelper.isValue(content))     { return webHelper.redirect(null, "글 내용을 입력하세요."); }
       
-		
+       //파라미터를 담을 객체 생성
 		Diary input = new Diary();
-		
-		
+	
 		input.setTitle(title);
 		input.setDate(date);
 		input.setWriter(writer);
@@ -122,6 +153,8 @@ public class DiaryController {
 		String redirectUrl = contextPath + "/diary/view.do?id="+ input.getId();
 		return webHelper.redirect(redirectUrl, "저장되었습니다.");
 	}
+	
+	// 상세페이지 
 	// 수정페이지
 	// 수정페이지에대한 action페이지
 	// 삭제페이지 
