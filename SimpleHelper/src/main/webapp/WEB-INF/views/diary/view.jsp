@@ -4,8 +4,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Hello JSP</title>
+   <%@ include file="../../include/header.jsp" %>
 </head>
 
 <body>

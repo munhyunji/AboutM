@@ -28,7 +28,7 @@
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#page_2">자신소개</a></li>
                      <li><a href="${pageContext.request.contextPath}/diary/list.do">Diary</a></li>
-                     <li><a href="#">마치며..</a></li>
+                     <li><a href="#page_5">마치며..</a></li>
 
                 </ul>
             </div>

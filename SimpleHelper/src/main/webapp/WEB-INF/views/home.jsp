@@ -5,24 +5,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
-<head>
-<title>Home</title>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/assets/css/nanumfont.css" />
-	<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/assets/css/main.css" />
-	<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/assets/css/navbar.css" />
-</head>
+	<%@ include file="../include/header.jsp" %>
 <body>
 	<%@ include file="../include/navbar.jsp"%>
     <div class="container">
         <div class="page_1" id="page_1">
         <div class="main_introduce">
              <img src="${pageContext.request.contextPath}/assets/img/beans.png" class="main_beans">
-            <img src="${pageContext.request.contextPath}/assets/img/jack.png" class="main_img">
+           <!-- <img src="${pageContext.request.contextPath}/assets/img/jack.png" class="main_img">-->
 
             
 

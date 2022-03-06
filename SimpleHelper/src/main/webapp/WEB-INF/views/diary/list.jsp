@@ -5,34 +5,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>Hello JSP</title>
-    <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/assets/css/nanumfont.css" />
-	<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/assets/css/navbar.css" />
-	<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/assets/css/list.css" />
-
-
-</head>
+ 	<%@ include file="../../include/header.jsp" %>
 <body>
 
-   
     <div class="container">
     <div class="diary_page">
      <h1>Dear diary</h1>
    <a class="btn btn-primary" href="${pageContext.request.contextPath}/diary/add.do">일기적기추가</a>
-
-   
-
-    <hr />
-	
-	
-	
+   <a class="btn btn-primary" href="../home.do">홈으로 돌아가기</a>
+   <a class="btn btn-primary" href="${pageContext.request.contextPath }/diary/calendar.do">달력가기</a>ㅁ>
+       <hr />
     <!-- 조회 결과 목록 -->
     <table border="1">
         <thead>
@@ -70,7 +52,7 @@
                             <td align="center"><a href="${viewUrl}">${item.title }</a></td>
                             <td align="center">${item.date}</td>
                             <td align="center">${item.writer}</td>
-                            <td align="center">${item.content}</td>
+                            <td align="center"  width="400px;">${item.content}</td>
                            
                         </tr>
                     </c:forEach>

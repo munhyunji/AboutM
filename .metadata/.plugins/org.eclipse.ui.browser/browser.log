@@ -49,3 +49,16 @@
 12월 17, 2021 20:13:01.570 [16476:15588:1217/201301.568:ERROR:device_event_log_impl.cc(214)] [20:13:01.567] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
 12월 17, 2021 20:13:01.576 [16476:15588:1217/201301.568:ERROR:device_event_log_impl.cc(214)] [20:13:01.568] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
 12월 17, 2021 20:13:01.580 [16476:11100:1217/201301.577:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+
+3월 06, 2022 14:33:55.187 NEW SESSION
+3월 06, 2022 14:33:55.188 [7260:3688:0306/143355.184:ERROR:device_event_log_impl.cc(214)] [14:33:55.184] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 06, 2022 14:33:55.189 [7260:3688:0306/143355.185:ERROR:device_event_log_impl.cc(214)] [14:33:55.185] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 06, 2022 14:33:55.189 [7260:3688:0306/143355.185:ERROR:device_event_log_impl.cc(214)] [14:33:55.185] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 06, 2022 14:33:55.203 [7260:10364:0306/143355.202:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 06, 2022 14:33:55.212 [7260:10364:0306/143355.211:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 06, 2022 14:33:55.215 [7260:10364:0306/143355.214:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 06, 2022 14:33:55.244 [7260:10364:0306/143355.244:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 06, 2022 14:34:01.309 [7260:3688:0306/143401.308:ERROR:template_url_service.cc(1064)] Search Engines datatype error was encountered: ProcessSyncChanges failed on ChangeType ACTION_DELETE
+3월 06, 2022 14:34:01.324 [7260:3688:0306/143401.324:ERROR:template_url_service.cc(1064)] Search Engines datatype error was encountered: ProcessSyncChanges failed on ChangeType ACTION_DELETE
+3월 06, 2022 14:42:04.202 [7260:3688:0306/144204.202:ERROR:device_event_log_impl.cc(214)] [14:42:04.201] USB: usb_service_win.cc:260 Failed to get device driver name: 요소가 없습니다. (0x490)
+3월 06, 2022 16:00:48.886 [7260:3688:0306/160048.886:ERROR:gpu_process_host.cc(978)] GPU process exited unexpectedly: exit_code=34
