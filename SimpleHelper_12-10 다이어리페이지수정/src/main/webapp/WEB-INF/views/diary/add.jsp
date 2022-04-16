@@ -10,7 +10,9 @@
  <%@ include file="../../include/header.jsp" %>
 
 <body>
+ <%@ include file="/WEB-INF/include/navbar.jsp" %>
 	<div class="container">
+		<div class="diary_page">
 		<h1>다이어리 추가</h1>
 		<hr />
 		<form action="${pageContext.request.contextPath }/diary/add_ok.do" method="post">
@@ -47,7 +49,7 @@
 		</form>
 	
 
-
+		</div>
 	</div>
 </body>
 

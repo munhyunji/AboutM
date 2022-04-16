@@ -97,83 +97,80 @@
 	<%@ include file="/WEB-INF/include/navbar.jsp" %>
    
     <div class="container">
-    <div class="diary_page">
-     <h1>Dear diary</h1>
-    <a href="${pageContext.request.contextPath}/diary/add.do">[일기적기추가]</a>
-    <hr />
-	<table id="calendar" border="3" align="center" style="border-color:#3333FF ">
-    <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
-        <td><label onclick="prevCalendar()"><</label></td>
-        <td align="center" id="tbCalendarYM" colspan="5">
-        yyyy년 m월</td>
-        <td><label onclick="nextCalendar()">>
-            
-        </label></td>
-    </tr>
-    <tr>
-        <td align="center"><font color ="#F79DC2">일</td>
-        <td align="center">월</td>
-        <td align="center">화</td>
-        <td align="center">수</td>
-        <td align="center">목</td>
-        <td align="center">금</td>
-        <td align="center"><font color ="skyblue">토</td>
-    </tr> 
-</table>
+	    <div class="diary_page">
+	     <h1>Dear diary</h1>
+	    <a href="${pageContext.request.contextPath}/diary/add.do">[일기적기추가]</a>
+	    <hr />
+		<table id="calendar" border="3" align="center" style="border-color:gray ">
+		    <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
+		        <td><label onclick="prevCalendar()"><</label></td>
+		        <td align="center" id="tbCalendarYM" colspan="5">
+		        yyyy년 m월</td>
+		        <td><label onclick="nextCalendar()">>
+		            
+		        </label></td>
+		    </tr>
+		    <tr>
+		        <td align="center"><font color ="#F79DC2">일</td>
+		        <td align="center">월</td>
+		        <td align="center">화</td>
+		        <td align="center">수</td>
+		        <td align="center">목</td>
+		        <td align="center">금</td>
+		        <td align="center"><font color ="skyblue">토</td>
+		    </tr> 
+		</table>
+		
+	    <!-- 조회 결과 목록 -->
+	    <table border="1">
+	        <thead>
+	            <tr>
+	                <th width="80" align="center">글번호</th>
+	                <th width="100" align="center">글제목</th>
+	                <th width="100" align="center">작성날짜</th>
+	                <th width="80" align="center">작성자</th>
+	                <th width="50" align="center">글내용</th>
+	               
+	            </tr>
+	        </thead>        
+	        <tbody>
+	            <c:choose>
+	                <%-- 조회결과가 없는 경우 --%>
+	                <c:when test="${output == null || fn:length(output) == 0}">
+	                    <tr>
+	                        <td colspan="9" align="center">조회결과가 없습니다.</td>
+	                    </tr>
+	                </c:when>
+	                <%-- 조회결과가 있는  경우 --%>
+	                <c:otherwise>
+	                    <%-- 조회 결과에 따른 반복 처리 --%>
+	                    <c:forEach var="item" items="${output}" varStatus="status">
+	                        <%-- 출력을 위해 준비한 교수이름 변수 --%>
+	                        <c:set var="title" value="${item.title}" />
+	                        
+	                        <%-- 상세페이지로 이동하기 위한 URL --%>
+	                        <c:url value="/diary/view.do" var="viewUrl">
+	                            <c:param name="id" value="${item.id}" />
+	                        </c:url>
+	                        
+	                        <tr>
+	                            <td align="center">${item.id}</td>
+	                            <td align="center">${item.title}</td>
+	                            <td align="center">${item.date}</td>
+	                            <td align="center">${item.writer}</td>
+	                            <td align="center" style="width:300px;"><a href="${viewUrl }">${item.content}</a></td>
+	                        </tr>
+	                    </c:forEach>
+	                </c:otherwise>
+	            </c:choose>
+	        </tbody>
+	    </table>
+	    	<!-- 페이지네이션 -->
+	    	
+	    
+	    </div>
+	</div>
 	
-    <!-- 조회 결과 목록 -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th width="80" align="center">글번호</th>
-                <th width="100" align="center">글제목</th>
-                <th width="100" align="center">작성날짜</th>
-                <th width="80" align="center">작성자</th>
-                <th width="50" align="center">글내용</th>
-               
-            </tr>
-        </thead>
-        
-        
-        <tbody>
-            <c:choose>
-                <%-- 조회결과가 없는 경우 --%>
-                <c:when test="${output == null || fn:length(output) == 0}">
-                    <tr>
-                        <td colspan="9" align="center">조회결과가 없습니다.</td>
-                    </tr>
-                </c:when>
-                <%-- 조회결과가 있는  경우 --%>
-                <c:otherwise>
-                    <%-- 조회 결과에 따른 반복 처리 --%>
-                    <c:forEach var="item" items="${output}" varStatus="status">
-                        <%-- 출력을 위해 준비한 교수이름 변수 --%>
-                        <c:set var="title" value="${item.title}" />
-                        
-                        <%-- 상세페이지로 이동하기 위한 URL --%>
-                        <c:url value="/diary/view.do" var="viewUrl">
-                            <c:param name="id" value="${item.id}" />
-                        </c:url>
-                        
-                        <tr>
-                            <td align="center">${item.id}</td>
-                            <td align="center">${item.title}</td>
-                            <td align="center">${item.date}</td>
-                            <td align="center">${item.writer}</td>
-                            <td align="center" style="width:300px;"><a href="${viewUrl }">${item.content}</a></td>
-                           
-                        </tr>
-                    </c:forEach>
-                </c:otherwise>
-            </c:choose>
-        </tbody>
-    </table>
-    	<!-- 페이지네이션 -->
-    	
-    
-    </div>
-</div>
-
 	<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/handlebars-v4.0.11.js"></script>

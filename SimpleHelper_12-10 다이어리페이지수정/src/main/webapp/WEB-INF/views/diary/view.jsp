@@ -10,7 +10,7 @@
  <%@ include file="../../include/header.jsp" %>
 
 <body>
-	<div class="container">
+	<div class="diary_container">
 		<h1>다이어리 보기</h1>
 		<hr />
 		<foreach var="item" items="${output }" varStatus="status">
