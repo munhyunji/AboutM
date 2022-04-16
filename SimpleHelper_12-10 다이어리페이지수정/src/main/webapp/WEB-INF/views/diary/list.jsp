@@ -94,17 +94,13 @@
 </head>
 <body>
 
+	<%@ include file="/WEB-INF/include/navbar.jsp" %>
    
     <div class="container">
     <div class="diary_page">
      <h1>Dear diary</h1>
     <a href="${pageContext.request.contextPath}/diary/add.do">[일기적기추가]</a>
-
-   
-
     <hr />
-	
-	
 	<table id="calendar" border="3" align="center" style="border-color:#3333FF ">
     <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
         <td><label onclick="prevCalendar()"><</label></td>

@@ -20,4 +20,10 @@ a {
 ul, ol {
     list-style: none;
 }
-
+.navbar-nav {
+	text-align:right;	
+}
+.navbar-nav li {
+	display:inline;
+	color:red;	
+}
